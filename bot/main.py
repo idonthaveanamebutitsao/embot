@@ -28,7 +28,7 @@ class DiscordBot(commands.Bot):
             'bot.cogs.basic_commands',
             'bot.cogs.fun_commands',
             'bot.cogs.mod_commands',
-            'bot.cogs.ai_commands'  # Add the new AI commands cog
+            'bot.cogs.ai_commands'
         ]
 
         for cog in cogs:
@@ -36,7 +36,7 @@ class DiscordBot(commands.Bot):
                 await self.load_extension(cog)
                 logger.info(f"{cog} betöltve")
             except Exception as e:
-                logger.error(f"Hiba a {cog} betöltésekor: {e}")
+                logger.error(f"Hiba a {cog} betöltésekor: {str(e)}")
 
     async def on_ready(self):
         """Called when the bot is ready and connected to Discord"""
@@ -51,7 +51,7 @@ class DiscordBot(commands.Bot):
         elif isinstance(error, commands.MissingPermissions):
             await ctx.send("Nincs jogosultságod ehhez a parancshoz.")
         else:
-            logger.error(f"Hiba történt a parancs végrehajtásakor: {error}")
+            logger.error(f"Hiba történt a parancs végrehajtásakor: {str(error)}")
             await ctx.send("Hiba történt a parancs végrehajtása közben.")
 
 async def run_bot():
@@ -60,5 +60,5 @@ async def run_bot():
         bot = DiscordBot()
         await bot.start(DISCORD_TOKEN)
     except Exception as e:
-        logger.error(f"Hiba a bot indításakor: {e}")
+        logger.error(f"Hiba a bot indításakor: {str(e)}")
         raise
