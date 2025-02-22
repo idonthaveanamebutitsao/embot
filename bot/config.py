@@ -1,7 +1,11 @@
 import os
 from dotenv import load_dotenv
 
-# Load environment variables
+# SECURITY WARNING: Never commit or share your Discord bot token!
+# If the token is accidentally exposed:
+# 1. Go to Discord Developer Portal
+# 2. Reset the token immediately
+# 3. Update the .env file with the new token
 load_dotenv()
 
 # Bot configuration

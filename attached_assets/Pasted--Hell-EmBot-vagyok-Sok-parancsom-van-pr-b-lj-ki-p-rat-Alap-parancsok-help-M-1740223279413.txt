@@ -1,0 +1,66 @@
+### Helló, EmBot vagyok!
+### Sok parancsom van, próbálj ki párat!
+
+### Alap parancsok:
+--> %help | Megjeleníti a bot parancsait (Update)
+--> %botinfó | Megjeleníti a bot statisztikáit
+--> /embed-create | Embed formátumban küldi az üzenetet (Update)
+--> /embed-image | Embed formátumban küldi a képet
+--> %avatar | Egy felhasználó profilképe (Update)
+--> %szerverkép | A szerver képe (New)
+--> %ping | A késleltetés ezredmásodpercben
+--> %napiüzi | Egy kedves üzenet naponta (Update)
+--> %szavazás {szöveg} | Szavazást indít
+--> %üzenet | A bot elküldi amit írtál
+--> %hibajegy (indok) | Hibajegyet hozz létre (Update)
+--> %zárás | Hibajegy bezárása
+--> %userinfó {user} | Egy felhasználó információi (Update)
+--> %bug {szöveg} | Itt jelentheti a hibákat (Megszünt, helyette: %jelentés)
+--> %ötlet {szöveg} | Itt adhatja fel az ötletei (Megszünt: helyette: %jelentés)
+--> %csatornainfó | Egy csatorna információi (New)
+--> %szerverinfó | Egy szerver információi (Update)
+--> %jelentés | Jelentesz az EmBot fejlesztőinek hibát, ötletet stb. (New)
+--> %hírek | A bot új hírei
+
+### Fun parancsok:
+--> %idő | A mai pontos idő
+--> %macska | Random macskás kép
+--> %kutya | Random kutyás kép
+--> %pénzdobás | 50%-50% fej vagy írás
+--> %melegségi szint {user} | Kiméri mennyire meleg valaki (Update)
+--> %iq | Kimére valaki mennyire okos (New)
+--> %szeretet {user} | Kiméri mennyire szeret téged valaki
+--> %ölelés {user} | Random animés ölelés
+--> %8ball | 8 válasz
+--> %számkitaláló | 1-100 között kell kitalálni egy számott
+--> %random százalék | Egy random szám
+--> %hack {user} | ,,Feltőrsz'' valakit (Update)
+--> %search {szöveg} | Google keresés (Megszünt, helyette: %keresés)
+--> %karakter {szöveg} | Egy minecraft karakter keresése
+--> %mcszerver {szöveg} | Egy minecraft szerver keresése
+--> %eredmény {szöveg} | Egy minecraft achivment szöveg
+--> %kpo {szöveg} | Kő, papír, olló játék
+--> %matek {szöveg} | Matematikai számolások (Update)
+--> %kaszinó | Kaszinós szerencse játék
+--> %dobás | Dobókockával való dobás (Update)
+
+### Ai parancsok:
+--> %chat | Ai alapú csevegés (New) (Beta)
+--> %kép | Ai alapú képet generál (New)
+--> %háttérkép | Ai alapú háttérképet generál, több mint 350 témában, és 30 stílusban (New)
+
+### Moderációs parancsok:
+--> %kick {user} (indok) | Kirúg valakit
+--> %ban {user} (indok) | Kitiltasz valakit (New)
+--> %törlés {mennyiség} | Töröl valamennyi üzenetet (New)
+--> /csatorna-készítés | Csatornát készít (New)
+--> /csatorna-törlés | Csatornát töröl (New)
+
+{user} | Egy felhasználó neve (kötelező)
+{mennyiség} | Egy valaminek a mennyisége (kötelező)
+{szöveg} | Egy üzenet a parancsba (kötelező)
+(indok) | Valamire egy indok (opcionális)
+(New) | Új parancs
+(Update) | Új frissités van a parancsban
+(Megszünt) | A parancs megszünt ( van mikor van helyette másik )
+(Nem münködik) | A parancs vagy hibás, vagy nem münködik

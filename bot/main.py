@@ -10,15 +10,32 @@ class DiscordBot(commands.Bot):
     def __init__(self):
         intents = discord.Intents.default()
         intents.message_content = True
-        super().__init__(command_prefix=COMMAND_PREFIX, intents=intents)
+        intents.members = True  # Enable member intents for user commands
+
+        # Request administrator permissions
+        permissions = discord.Permissions()
+        permissions.administrator = True
+
+        super().__init__(
+            command_prefix=COMMAND_PREFIX,
+            intents=intents,
+            permissions=permissions
+        )
 
     async def setup_hook(self):
         """Load cogs and perform initial setup"""
-        try:
-            await self.load_extension('bot.cogs.basic_commands')
-            logger.info("Alap parancsok betöltve")
-        except Exception as e:
-            logger.error(f"Hiba az alap parancsok betöltésekor: {e}")
+        cogs = [
+            'bot.cogs.basic_commands',
+            'bot.cogs.fun_commands',
+            'bot.cogs.mod_commands'
+        ]
+
+        for cog in cogs:
+            try:
+                await self.load_extension(cog)
+                logger.info(f"{cog} betöltve")
+            except Exception as e:
+                logger.error(f"Hiba a {cog} betöltésekor: {e}")
 
     async def on_ready(self):
         """Called when the bot is ready and connected to Discord"""
