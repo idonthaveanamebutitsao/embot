@@ -8,6 +8,9 @@ import os
 
 logger = logging.getLogger(__name__)
 
+# Add HuggingFace token configuration
+HUGGINGFACE_TOKEN = os.environ.get("HUGGINGFACE_API_TOKEN")
+
 class AICommands(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -32,11 +35,12 @@ class AICommands(commands.Cog):
             model_name = "facebook/blenderbot-400M-distill"
             logger.info(f"Starting to load model: {model_name}")
 
-            # Load tokenizer first
+            # Load tokenizer with auth token
             logger.info("Loading tokenizer...")
             self.tokenizer = BlenderbotTokenizer.from_pretrained(
                 model_name,
                 cache_dir=self.cache_dir,
+                use_auth_token=HUGGINGFACE_TOKEN,
                 local_files_only=False
             )
             if not self.tokenizer:
@@ -44,13 +48,14 @@ class AICommands(commands.Cog):
                 return False
             logger.info("Tokenizer loaded successfully")
 
-            # Load model with specific configuration
+            # Load model with auth token
             logger.info("Loading model...")
             self.model = BlenderbotForConditionalGeneration.from_pretrained(
                 model_name,
                 torch_dtype=torch.float32,
                 low_cpu_mem_usage=True,
                 cache_dir=self.cache_dir,
+                use_auth_token=HUGGINGFACE_TOKEN,
                 local_files_only=False
             )
 
