@@ -27,7 +27,8 @@ class DiscordBot(commands.Bot):
         cogs = [
             'bot.cogs.basic_commands',
             'bot.cogs.fun_commands',
-            'bot.cogs.mod_commands'
+            'bot.cogs.mod_commands',
+            'bot.cogs.ai_commands'  # Add the new AI commands cog
         ]
 
         for cog in cogs:

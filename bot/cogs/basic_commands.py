@@ -45,7 +45,7 @@ class BasicCommands(commands.Cog):
         --> %jelentés | Jelentesz az EmBot fejlesztőinek hibát, ötletet stb.
         --> %hírek | A bot új hírei
         --> %admininfó | Admin jogosultságod ellenőrzése
-        --> %fejlesztőcsapat | A bot fejlesztőcsapatának információi
+        --> %bdt | A bot fejlesztőcsapatának információi
         """
         embed.add_field(name="### Alap parancsok:", value=basic_commands, inline=False)
 
@@ -218,7 +218,7 @@ class BasicCommands(commands.Cog):
 
         await ctx.send(embed=embed)
 
-    @commands.command(name='fejlesztőcsapat', aliases=['devteam'])
+    @commands.command(name='bdt', aliases=['fejlesztőcsapat', 'devteam'])
     async def dev_team(self, ctx):
         """Megjeleníti a fejlesztőcsapat információit"""
         # Create the embed
