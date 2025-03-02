@@ -64,3 +64,5 @@
 (Update) | Új frissités van a parancsban
 (Megszünt) | A parancs megszünt ( van mikor van helyette másik )
 (Nem münködik) | A parancs vagy hibás, vagy nem münködik
+
+old
